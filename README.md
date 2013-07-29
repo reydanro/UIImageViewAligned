@@ -8,6 +8,7 @@ This works even if the `contentMode` is set to `AspectFit`, `AspectFill` or `Sca
 Why a subclass of UIImageView, and not a standard UIView?
 =========================================================
 Because there are many cool categories built on top of UIImageView. Subclassing a standard UIView would mean losing them.
+
 For example, AFNetworking's async `UIImageView` category works perfectly using this container class, and you don't have to worry about a thing.
 
 
