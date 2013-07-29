@@ -21,6 +21,10 @@ At runtime, you can change the image, contentMode or alignment and the image wil
 
 The `image` property of UIImageViewAligned is overwritten to forward the calls to the inner `UIImageView`, so you can just drag-n-drop into your app.
 
+Compatibility
+=============
+From what I tested, it works on iOS 6.0+.
+Also, it supports autorotation and will reposition the image correctly.
 
 Using Interface Builder
 =======================
