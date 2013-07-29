@@ -34,4 +34,4 @@ The possible boolean names are:
 
 Below is a screenshot of an example. You will not get an immediate feedback in IB regarding your alignment, but it will work at runtime.
 
-![alt tag](https://raw.github.com/reydanro/UIImageViewAligned/master/docs/IBsetup.jpg)
+![alt tag](https://raw.github.com/reydanro/UIImageViewAligned/master/docs/IBsetup.png)
