@@ -24,4 +24,14 @@ The `image` property of UIImageViewAligned is overwritten to forward the calls t
 
 Using Interface Builder
 =======================
-Coming soon
+You can setup the alignment from Interface Builder using the `Identity Inspector` tab for the UIImageViewAligned.
+There, you can add custom boolean properties that will be set when the view is instantiated.
+The possible boolean names are:
+`alignLeft`
+`alignRight`
+`alignTop`
+`alignBottom`
+
+Below is a screenshot of an example. You will not get an immediate feedback in IB regarding your alignment, but it will work at runtime.
+
+![alt tag](https://raw.github.com/reydanro/UIImageViewAligned/master/docs/IBsetup.jpg)
