@@ -37,6 +37,11 @@ typedef enum
 @property (nonatomic) BOOL alignTop;
 @property (nonatomic) BOOL alignBottom;
 
+// Make the UIImageView scale only up or down
+// This are used only if the content mode is Scaled
+@property (nonatomic) BOOL enableScaleUp;
+@property (nonatomic) BOOL enableScaleDown;
+
 // Just in case you need access to the inner image view
 @property (nonatomic, readonly) UIImageView* realImageView;
 

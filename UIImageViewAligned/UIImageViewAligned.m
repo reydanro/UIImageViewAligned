@@ -50,6 +50,9 @@
 
 - (void)commonInit
 {
+    _enableScaleDown = TRUE;
+    _enableScaleUp = TRUE;
+    
     _alignment = UIImageViewAlignmentMaskCenter;
     
     _realImageView = [[UIImageView alloc] initWithFrame:self.bounds];
@@ -128,6 +131,10 @@
             float scalex = self.bounds.size.width / _realImageView.image.size.width;
             float scaley = self.bounds.size.height / _realImageView.image.size.height;
             float scale = MIN(scalex, scaley);
+
+            if ((scale > 1.0f && !_enableScaleUp) ||
+                (scale < 1.0f && !_enableScaleDown))
+                scale = 1.0f;
             size = CGSizeMake(_realImageView.image.size.width * scale, _realImageView.image.size.height * scale);
             break;
         }
@@ -137,13 +144,30 @@
             float scalex = self.bounds.size.width / _realImageView.image.size.width;
             float scaley = self.bounds.size.height / _realImageView.image.size.height;
             float scale = MAX(scalex, scaley);
+            
+            if ((scale > 1.0f && !_enableScaleUp) ||
+                (scale < 1.0f && !_enableScaleDown))
+                scale = 1.0f;
+            
             size = CGSizeMake(_realImageView.image.size.width * scale, _realImageView.image.size.height * scale);
             break;
         }
             
         case UIViewContentModeScaleToFill:
-            size = self.bounds.size;
+        {
+            float scalex = self.bounds.size.width / _realImageView.image.size.width;
+            float scaley = self.bounds.size.height / _realImageView.image.size.height;
+
+            if ((scalex > 1.0f && !_enableScaleUp) ||
+                (scalex < 1.0f && !_enableScaleDown))
+                scalex = 1.0f;
+            if ((scaley > 1.0f && !_enableScaleUp) ||
+                (scaley < 1.0f && !_enableScaleDown))
+                scaley = 1.0f;
+            
+            size = CGSizeMake(_realImageView.image.size.width * scalex, _realImageView.image.size.height * scaley);
             break;
+        }
 
         default:
             size = _realImageView.image.size;
