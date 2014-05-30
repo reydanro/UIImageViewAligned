@@ -180,6 +180,13 @@
 }
 
 
+#pragma mark - UIImageView overloads
+
+- (void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    self.layer.contents = nil;
+}
+
 #pragma mark - Properties needed for Interface Builder
 
 - (BOOL)alignLeft
