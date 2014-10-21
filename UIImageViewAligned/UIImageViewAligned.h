@@ -22,14 +22,16 @@ typedef enum
     UIImageViewAlignmentMaskTopLeft = UIImageViewAlignmentMaskTop | UIImageViewAlignmentMaskLeft,
     UIImageViewAlignmentMaskTopRight = UIImageViewAlignmentMaskTop | UIImageViewAlignmentMaskRight,
     
-}UIImageViewAignmentMask;
+}UIImageViewAlignmentMask;
+
+typedef UIImageViewAlignmentMask UIImageViewAignmentMask __attribute__((deprecated("Use UIImageViewAlignmentMask. Use of UIImageViewAignmentMask (misspelled) is deprecated.")));
 
 
 
 @interface UIImageViewAligned : UIImageView
 
 // This property holds the current alignment
-@property (nonatomic) UIImageViewAignmentMask alignment;
+@property (nonatomic) UIImageViewAlignmentMask alignment;
 
 // Properties needed for Interface Builder quick setup
 @property (nonatomic) BOOL alignLeft;

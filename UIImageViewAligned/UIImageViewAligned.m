@@ -87,7 +87,7 @@
     [self setNeedsLayout];
 }
 
-- (void)setAlignment:(UIImageViewAignmentMask)alignment
+- (void)setAlignment:(UIImageViewAlignmentMask)alignment
 {
     if (_alignment == alignment)
         return ;
