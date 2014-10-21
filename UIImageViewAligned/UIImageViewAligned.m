@@ -98,6 +98,8 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     CGSize realsize = [self realContentSize];
     
     // Start centered
