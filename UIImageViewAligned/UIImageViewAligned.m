@@ -187,6 +187,20 @@
     self.layer.contents = nil;
 }
 
+#pragma mark - UIView overloads
+
+- (void)didMoveToWindow
+{
+    [super didMoveToWindow];
+    self.layer.contents = nil;
+}
+
+- (void)didMoveToSuperview
+{
+    [super didMoveToSuperview];
+    self.layer.contents = nil;
+}
+
 #pragma mark - Properties needed for Interface Builder
 
 - (BOOL)alignLeft
