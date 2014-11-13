@@ -20,7 +20,6 @@
     return self;
 }
 
-
 - (id)initWithImage:(UIImage *)image
 {
     self = [super initWithImage:image];
@@ -182,8 +181,21 @@
 
 #pragma mark - UIImageView overloads
 
-- (void)setHighlighted:(BOOL)highlighted {
+- (void)setHighlighted:(BOOL)highlighted 
+{
     [super setHighlighted:highlighted];
+    self.layer.contents = nil;
+}
+
+- (void)didMoveToWindow
+{
+    [super didMoveToSuperview];
+    self.layer.contents = nil;
+}
+
+- (void)didMoveToSuperview
+{
+    [super didMoveToSuperview];
     self.layer.contents = nil;
 }
 
@@ -193,6 +205,7 @@
 {
     return (_alignment & UIImageViewAlignmentMaskLeft) != 0;
 }
+
 - (void)setAlignLeft:(BOOL)alignLeft
 {
     if (alignLeft)
@@ -205,6 +218,7 @@
 {
     return (_alignment & UIImageViewAlignmentMaskRight) != 0;
 }
+
 - (void)setAlignRight:(BOOL)alignRight
 {
     if (alignRight)
@@ -213,11 +227,11 @@
         self.alignment &= ~UIImageViewAlignmentMaskRight;
 }
 
-
 - (BOOL)alignTop
 {
     return (_alignment & UIImageViewAlignmentMaskTop) != 0;
 }
+
 - (void)setAlignTop:(BOOL)alignTop
 {
     if (alignTop)
@@ -230,6 +244,7 @@
 {
     return (_alignment & UIImageViewAlignmentMaskBottom) != 0;
 }
+
 - (void)setAlignBottom:(BOOL)alignBottom
 {
     if (alignBottom)
