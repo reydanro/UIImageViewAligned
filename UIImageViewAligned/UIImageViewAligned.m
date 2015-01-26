@@ -238,4 +238,9 @@
         self.alignment &= ~UIImageViewAlignmentMaskBottom;
 }
 
+- (CGSize)sizeThatFits:(CGSize)size {
+    return [self.realImageView sizeThatFits:size];
+}
+
+
 @end
