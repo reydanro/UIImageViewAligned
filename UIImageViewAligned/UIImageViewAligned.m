@@ -3,7 +3,6 @@
 //  awards
 //
 //  Created by Andrei Stanescu on 7/29/13.
-//  Copyright (c) 2013 Mind Treat Studios. All rights reserved.
 //
 
 #import "UIImageViewAligned.h"
