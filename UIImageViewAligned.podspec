@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = "Andrei Stanescu"
-  s.social_media_url   = "http://twitter.com/MTStudios_"
+  s.social_media_url   = "http://www.mindtreatstudios.com/"
   s.platform     = :ios
 
-  s.source       = { :git => "https://github.com/reydanro/UIImageViewAligned.git", :tag => "[ADD THIS]" }
+  s.source       = { :git => "https://github.com/reydanro/UIImageViewAligned.git", :tag => "pod-0.0.1" }
   s.source_files  = "UIImageViewAligned"
 
   s.framework  = "UIKit"
