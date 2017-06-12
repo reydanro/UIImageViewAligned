@@ -38,6 +38,11 @@ typedef UIImageViewAlignmentMask UIImageViewAignmentMask __attribute__((deprecat
 @property (nonatomic) BOOL alignTop;
 @property (nonatomic) BOOL alignBottom;
 
+@property (nonatomic) CGFloat insetLeftPercentage;
+@property (nonatomic) CGFloat insetRightPercentage;
+@property (nonatomic) CGFloat insetTopPercentage;
+@property (nonatomic) CGFloat insetBottomPercentage;
+
 // Make the UIImageView scale only up or down
 // This are used only if the content mode is Scaled
 @property (nonatomic) BOOL enableScaleUp;
