@@ -97,20 +97,22 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     CGSize realsize = [self realContentSize];
     
     // Start centered
     CGRect realframe = CGRectMake((self.bounds.size.width - realsize.width)/2, (self.bounds.size.height - realsize.height) / 2, realsize.width, realsize.height);
     
     if ((_alignment & UIImageViewAlignmentMaskLeft) != 0)
-        realframe.origin.x = 0;
+        realframe.origin.x = 0 - (self.bounds.size.height * self.insetLeftPercentage);
     else if ((_alignment & UIImageViewAlignmentMaskRight) != 0)
-        realframe.origin.x = CGRectGetMaxX(self.bounds) - realframe.size.width;
+        realframe.origin.x = CGRectGetMaxX(self.bounds) - realframe.size.width + (self.bounds.size.height * self.insetRightPercentage);
     
     if ((_alignment & UIImageViewAlignmentMaskTop) != 0)
-        realframe.origin.y = 0;
+        realframe.origin.y = 0 - (self.bounds.size.height * self.insetTopPercentage);
     else if ((_alignment & UIImageViewAlignmentMaskBottom) != 0)
-        realframe.origin.y = CGRectGetMaxY(self.bounds) - realframe.size.height;
+        realframe.origin.y = CGRectGetMaxY(self.bounds) - realframe.size.height + (self.bounds.size.height * self.insetBottomPercentage);
     
     _realImageView.frame = realframe;
 
